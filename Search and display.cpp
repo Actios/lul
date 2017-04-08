@@ -8,12 +8,9 @@
 
 using namespace std;
 
-void SearchGroup()
+void SearchGroup(string name)
 {
-	int check1 = 1;
-	while (check1) {
-		cout << "Enter the name of group" << endl;
-		string name, group;
+		string group;
 		bool check = 0;
 		cin >> name;
 		ifstream fin("registry.txt");
@@ -23,7 +20,7 @@ void SearchGroup()
 			if (group == name) { check = 1; fin.close(); }
 		}
 		fin.close();
-		if (!check) cout << "Group isn't exists"<<endl;
+		if (!check) cout << "Group isn't exists" << endl;
 		else
 		{
 			name = name + ".txt";
@@ -35,15 +32,5 @@ void SearchGroup()
 				cout << student << endl;
 			}
 			ffin.close();
-		}
-		cout << "1-Continue 0-Stop";
-		cin >> check1;
-	}
-}
-
-int main()
-{
-	SearchGroup();
-	system("PAUSE");
-	return 0;
+		}	
 }
