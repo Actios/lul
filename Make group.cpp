@@ -1,13 +1,3 @@
-#include <iostream>
-#include <fstream>
-#include <ctime>
-#include <cstdlib>
-#include <cstring>
-#include <string.h>
-#include <string>
-
-using namespace std;
-
 void make_group(string data, string group)
 {
 	string grouptxt = group + ".txt";
@@ -18,12 +8,4 @@ void make_group(string data, string group)
 	ofstream nfout(registry);
 	nfout << group << '\n';
 	nfout.close();
-}
-
-
-int main()
-{
-	make_group();
-	system("PAUSE");
-	return 0;
 }
