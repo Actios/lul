@@ -2,62 +2,71 @@
 #include <fstream>
 #include <cstdlib>
 #include <cstdio>
-#include <string>
 #include <ctime>
 
 using namespace std;
 
 int main()
 {
-	string operation;
-	cout << "Enter the operation (add_student, delete_student, show_group, make_group, delete_group): ";
+	char operation[20];
+	cout << "Enter the operation (add_student, delete_student, show_group, make_group, delete_group, join_groups): ";
 	cin >> operation;
 	while (operation != "add_student" || operation != "delete_student" || operation != "show_group" || operation != "make_group" || operation != "delete_group")
-	cout << "This operation doesn't exist. Please, enter one of the following operations:\nadd_student, delete_student, show_group, make_group, delete_group";
+	cout << "This operation doesn't exist. Please, enter one of the following operations:\nadd_student, delete_student, show_group, make_group, delete_group, join_groups";
 	if (operation == "add_student")
 	{
-		string group;
-		string info;
+		char group[20];
+		char info[200];
 		cout << "\nEnter the information about student:\n";
 		cin >> info;
 		cout << "\nEnter the group: ";
 		cin >> group;
-		AddElem(string group, string info);
+		AddElem(char group[20], char info[200]);
 
 	}
 	else if (operation == "delete_student")
 	{
-		string group;
-		string info;
+		char group[20];
+		char info[200];
 		cout << "\nEnter the group: ";
 		cin >> group;
 		cout << "\nEnter the information about student:\n";
 		cin >> info;
-		DelElem(string group, string info);
+		DelElem(char group[20], char info[200]);
 	}
 	else if (operation == "show_group")
 	{
-		string group;
+		char group[20];
 		cout << "\nEnter the group: ";
 		cin >> group;
-		show(string group);
+		show(char group[20]);
 	}
 	else if (operation == "make_group")
 	{
-		string group;
-		string info;
+		char group[20];
+		char info[200];
 		cout << "\nEnter the group: ";
 		cin >> group;
 		cout << "\nEnter the information about student:\n";
 		cin >> info;
-		make_group(string group, string info);
+		make_group(char group[20], char info[200]);
 	}
 	else if (operation == "delete_group")
 	{
-		string group;
+		char group[20];
 		cout << "\nEnter the group: ";
 		cin >> group;
-		dell_gr(string group);
+		dell_gr(char group[20]);
+	}
+	else if (operation == "join_groups")
+	{
+		char group1[20];
+		char group2[20];
+		cout << "\nEnter the group1: ";
+		cin >> group1;
+		cout << "\nEnter the group2: ";
+		cin >> group2;
+		JoinGroups(char group1[20], char group2[20], char newgroup[20]);
 	}
 	return 0;
 }
