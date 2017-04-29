@@ -1,13 +1,3 @@
-#include <iostream>
-#include <fstream>
-#include <ctime>
-#include <cstdlib>
-#include <cstring>
-#include <string.h>
-#include <string>
-
-using namespace std;
-
 void SearchGroup(string name)
 {
 		string group;
