@@ -7,7 +7,7 @@ void TestJoinGroups()
 	ifstream fin2(testgroup2);
 	ofstream fout(testnewgroup, ios_base::ate);
 	if (!fin1.is_open() && !fin2.is_open())
-		cout << "Testing failed!"
+		cout << "Testing failed!";
 	else
 	{
 		const int max_length1 = 1024;
@@ -18,6 +18,6 @@ void TestJoinGroups()
 		char str2[max_length2];
 		fin2.getline(str2, max_length2);
 		fout << str2;
-		cout << "Testing succeeded!"
+		cout << "Testing succeeded!";
 	}
 }

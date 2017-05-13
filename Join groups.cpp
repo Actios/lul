@@ -1,4 +1,4 @@
-void JoinGroups(char group1[20], char group2[20], char newgroup[20])
+void JoinGroups(char* group1, char* group2, char* newgroup)
 {
 	ifstream fin1(group1);
 	ifstream fin2(group2);

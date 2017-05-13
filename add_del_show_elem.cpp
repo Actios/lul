@@ -1,12 +1,50 @@
-#include <iostream>
-#include <string>
-#include <stdio.h>
-#include <fstream>
-#include <cstdio>
-#include<cstring>
-using namespace std;
+void AddElem(string elem, char f_name[20])
+ {
+	fstream fin(f_name);
+	string str1, bufer = elem + "\n";
+	
+		while (!fin.eof())
+		 {
+		getline(fin, str1);
+		bufer += str1 + "\n";
+		}
+	fin.close();
+	remove(f_name);
+	ofstream f(f_name);
+	f << bufer;
+	f.close();
+	}
 
-bool FindStud(string fio, char *f_name) 
+void DelElem(string elem, char f_name[20])
+ {
+	fstream fin(f_name);
+	string str1, bufer;
+	
+		while (!fin.eof())
+		 {
+		getline(fin, str1);
+		if (str1.find(elem) == -1) bufer += str1 + "\n";
+		}
+	fin.close();
+	remove(f_name);
+	ofstream f(f_name);
+	f << bufer;
+	f.close();
+	}
+
+void show(char f_name[20])
+ {
+	fstream fin(f_name);
+	string str1;
+	
+		while (!fin.eof())
+		 {
+		getline(fin, str1);
+		cout << str1 << endl;
+		}
+	fin.close();
+	}
+bool FindStud(string fio, char *f_name)
 {
 	ifstream fin(f_name);
 	string str1;
@@ -43,8 +81,3 @@ bool SearchFile(char *f_name)
     fin.close ();	
 	return 0;
 }
-
-
-
-
-

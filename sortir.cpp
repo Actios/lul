@@ -1,8 +1,3 @@
-#include <iostream>
-#include <cstring>
-
-using namespace std;
-
 char *strch(string str)
 {
 	
@@ -13,5 +8,3 @@ char *strch(string str)
 	return ch;
 
 }
-
-

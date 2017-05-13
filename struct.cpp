@@ -1,11 +1,3 @@
-#include <iostream>
-#include <fstream>
-#include <cstdio>
-#include<cstring>
-#include <windows.h>
-
-using namespace std;
-
 struct stud
 {
 	char fio[50];
